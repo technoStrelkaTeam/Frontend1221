@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/ui/responsive.dart';
@@ -104,11 +105,7 @@ class _FallbackCard extends StatelessWidget {
             ),
             const SizedBox(width: 12),
             FilledButton.tonal(
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Форма HR будет подключена на этапе интеграции.')),
-                );
-              },
+              onPressed: () => context.push('/portal/chat/ticket'),
               child: const Text('Написать в HR'),
             ),
           ],

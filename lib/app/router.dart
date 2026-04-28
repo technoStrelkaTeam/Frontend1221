@@ -11,6 +11,7 @@ import '../features/chat/presentation/hr_ticket_page.dart';
 import '../features/portal/presentation/pages/benefits_page.dart';
 import '../features/portal/presentation/pages/cafeteria_page.dart';
 import '../features/portal/presentation/pages/contacts_page.dart';
+import '../features/portal/presentation/pages/documents_page.dart';
 import '../features/portal/presentation/pages/more_page.dart';
 import '../features/portal/presentation/pages/portal_home_page.dart';
 import '../features/portal/presentation/portal_scaffold.dart';
@@ -88,6 +89,10 @@ final routerProvider = Provider<GoRouter>((ref) {
           GoRoute(
             path: '/portal/contacts',
             builder: (context, state) => const ContactsPage(),
+          ),
+          GoRoute(
+            path: '/portal/documents',
+            builder: (context, state) => const DocumentsPage(),
           ),
           GoRoute(
             path: '/portal/cafeteria',

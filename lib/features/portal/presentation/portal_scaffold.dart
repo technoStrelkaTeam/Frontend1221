@@ -24,6 +24,7 @@ class PortalScaffold extends ConsumerWidget {
     if (location.startsWith('/portal/chat/history')) return 'История';
     if (location.startsWith('/portal/chat')) return 'Чат';
     if (location.startsWith('/portal/contacts')) return 'Контакты';
+    if (location.startsWith('/portal/documents')) return 'Документы';
     if (location.startsWith('/portal/cafeteria')) return 'Кафетерий';
     if (location.startsWith('/portal/benefits')) return 'Льготы';
     if (location.startsWith('/portal/more')) return 'Для сотрудников';

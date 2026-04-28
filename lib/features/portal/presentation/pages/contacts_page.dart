@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/ui/responsive.dart';
 
@@ -11,10 +12,19 @@ class ContactsPage extends StatelessWidget {
       maxWidth: 900,
       child: ListView(
         padding: const EdgeInsets.symmetric(vertical: 12),
-        children: const [
-          _ContactTile(title: 'HR общий', subtitle: 'hr@company.ru • доб. 100'),
-          _ContactTile(title: 'IT поддержка', subtitle: 'it@company.ru • доб. 200'),
-          _ContactTile(title: 'Безопасность', subtitle: 'security@company.ru • доб. 300'),
+        children: [
+          const _ContactTile(title: 'HR общий', subtitle: 'hr@company.ru • доб. 100'),
+          const _ContactTile(title: 'IT поддержка', subtitle: 'it@company.ru • доб. 200'),
+          const _ContactTile(title: 'Безопасность', subtitle: 'security@company.ru • доб. 300'),
+          const SizedBox(height: 16),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: FilledButton.icon(
+              onPressed: () => context.push('/portal/chat/ticket'),
+              icon: const Icon(Icons.edit_note),
+              label: const Text('Написать в HR'),
+            ),
+          ),
         ],
       ),
     );

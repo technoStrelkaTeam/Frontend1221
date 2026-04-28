@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/ui/responsive.dart';
 
@@ -11,21 +12,25 @@ class MorePage extends StatelessWidget {
       maxWidth: 900,
       child: ListView(
         padding: const EdgeInsets.symmetric(vertical: 12),
-        children: const [
+        children: [
           ListTile(
-            leading: Icon(Icons.description_outlined),
-            title: Text('Документы'),
-            subtitle: Text('Справки, приказы, шаблоны.'),
+            leading: const Icon(Icons.description_outlined),
+            title: const Text('Документы'),
+            subtitle: const Text('Справки, приказы, шаблоны.'),
+            onTap: () => context.go('/portal/documents'),
+            trailing: const Icon(Icons.chevron_right),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.newspaper_outlined),
             title: Text('Новости компании'),
             subtitle: Text('Лента новостей/объявлений.'),
           ),
           ListTile(
-            leading: Icon(Icons.assignment_outlined),
-            title: Text('Заявки'),
-            subtitle: Text('Заявка на справку, пропуск, техника.'),
+            leading: const Icon(Icons.assignment_outlined),
+            title: const Text('Заявки'),
+            subtitle: const Text('Заявка на справку, пропуск, техника.'),
+            onTap: () => context.go('/portal/chat/ticket'),
+            trailing: const Icon(Icons.chevron_right),
           ),
         ],
       ),
