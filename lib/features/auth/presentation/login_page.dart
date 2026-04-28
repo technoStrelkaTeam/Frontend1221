@@ -28,11 +28,19 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     final isValid = _formKey.currentState?.validate() ?? false;
     if (!isValid) return;
 
-    await ref
+    final response = await ref
         .read(authControllerProvider.notifier)
         .signIn(email: _emailController.text, password: _passwordController.text);
 
     if (!mounted) return;
+    
+    if (!response.success) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(response.message ?? 'Ошибка входа')),
+      );
+      return;
+    }
+
     context.go('/portal');
   }
 

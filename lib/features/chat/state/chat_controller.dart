@@ -210,6 +210,8 @@ class ChatController extends Notifier<ChatState> {
     if (state.threadId == threadId) {
       await startNewThread();
     }
+
+    ref.invalidate(chatThreadsProvider);
   }
 
   Future<void> clear() async {
