@@ -74,6 +74,9 @@ flutter:
   assets:
     - assets/lottie/
     - assets/documents/
+    - assets/fotor-icon-48.png
+    - assets/fotor-icon-96.png
+    - assets/fotor-icon-512.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

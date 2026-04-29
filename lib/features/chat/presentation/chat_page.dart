@@ -101,12 +101,12 @@ class _FallbackCard extends StatelessWidget {
             Icon(Icons.support_agent, color: theme.colorScheme.onSecondaryContainer),
             const SizedBox(width: 12),
             const Expanded(
-              child: Text('Не нашёл в документах? Нажмите «Написать в HR».'),
+              child: Text('Не нашёл в документах? Нажмите «Написать HR».'),
             ),
             const SizedBox(width: 12),
             FilledButton.tonal(
               onPressed: () => context.push('/portal/chat/ticket'),
-              child: const Text('Написать в HR'),
+              child: const Text('Написать HR'),
             ),
           ],
         ),

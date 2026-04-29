@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../domain/chat_source.dart';
 
@@ -20,13 +20,7 @@ class ChatSourcesList extends StatelessWidget {
         ...sources.map((s) {
           return InkWell(
             borderRadius: BorderRadius.circular(10),
-            onTap: s.url == null
-                ? null
-                : () async {
-                    final uri = Uri.tryParse(s.url!);
-                    if (uri == null) return;
-                    await launchUrl(uri, mode: LaunchMode.externalApplication);
-                  },
+            onTap: () => context.go('/portal/documents'),
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 6),
               child: Row(
@@ -37,10 +31,8 @@ class ChatSourcesList extends StatelessWidget {
                   Expanded(
                     child: Text(s.ref, style: theme.textTheme.bodySmall),
                   ),
-                  if (s.url != null) ...[
-                    const SizedBox(width: 8),
-                    const Icon(Icons.open_in_new, size: 16),
-                  ],
+                  const SizedBox(width: 8),
+                  const Icon(Icons.open_in_new, size: 16),
                 ],
               ),
             ),
